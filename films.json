@@ -1,0 +1,103 @@
+[
+    {
+      "titre": "Avatar",
+      "réalisateur": "David Lynch",
+      "durée": "162 min",
+      "année": "2009",
+      "Poster": "image/camera.jpg",
+      "festivals" : [" Cannes","international","Oscars"],
+      "acteurs" : [
+        {
+            "prénom":"pacino",
+            "nom": "al",
+            "nationalité": "american"
+        },
+        {
+            "prénom": "james",
+            "nom": "caan",
+            "nationalité": "american"
+        },
+        {
+            "prénom":"marlon",
+            "nom": "brando",
+            "nationalité": "american"
+        }
+    ] 
+    },
+    {
+        "titre": "I Am Legend",
+        "réalisateur": "Orson Welles",
+        "durée": "101 min",
+        "année": "2007",
+        "Poster": "image/camera2.jpeg",
+        "festivals" : ["Academy Awards","Mostra de Venise","Américain de Deauville"],
+        "acteurs" : [
+            {
+                "prénom":"pacino",
+                "nom": "al",
+                "nationalité": "american"
+            },
+            {
+                "prénom": "james",
+                "nom": "caan",
+                "nationalité": "american"
+            },
+            {
+                "prénom":"marlon",
+                "nom": "brando",
+                "nationalité": "american"
+            }
+        ]
+    },
+    {
+      "titre": "300",
+      "réalisateur": "Ingmar Bergman",
+      "durée": "117 min",
+      "année": "2006",
+      "Poster": "image/camera3.jpg",
+      "festivals" : ["Oscars","Academy Awards","international"],
+      "acteurs" : [
+        {
+            "prénom":"pacino",
+            "nom": "al",
+            "nationalité": "american"
+        },
+        {
+            "prénom": "james",
+            "nom": "caan",
+            "nationalité": "american"
+        },
+        {
+            "prénom":"marlon",
+            "nom": "brando",
+            "nationalité": "american"
+        }
+    ]
+    },
+    {
+      "titre": "The Avengers",
+      "réalisateur": "Stanley Kubrick",
+      "durée": "143 min",
+      "année": "2012",
+      "Poster": "image/camera2.jpeg",
+      "festivals" : ["Mostra de Venise","Cannes","Américain de Deauville"],
+      "acteurs" : [
+        {
+            "prénom":"pacino",
+            "nom": "al",
+            "nationalité": "american"
+        },
+        {
+            "prénom": "james",
+            "nom": "caan",
+            "nationalité": "american"
+        },
+        {
+            "prénom":"marlon",
+            "nom": "brando",
+            "nationalité": "american"
+        }
+    ]
+    }
+   
+  ]
