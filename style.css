@@ -9,4 +9,8 @@ body{
 tr td img{
   width: 80PX;
 }
+.icon{
+  margin-left: 15px;
+  cursor: pointer;
+}
 

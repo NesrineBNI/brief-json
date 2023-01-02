@@ -1,14 +1,14 @@
 // Déclarer la liste qui contiendra les données
-var datalist = [];
+let datalist = [];
 
 // Récupérer les données
-// inxae xmlhttpre min ajl tabadol bayanat ma3a serveur
+
 // Créer une variable XMLHttpRequest pour échanger des données avec serveur
-var xhr = new XMLHttpRequest();
-// tohadid lana tari9at isti3lam naw3 get aw post (method, url)
+let xhr = new XMLHttpRequest();
+
 // Déterminer la méthode d'envoi get ou post (method, url)
 xhr.open("GET", "films.json");
-// khawas xmlhttpreq (on -> redysta -> 0 1 2 3 4 najih )
+
 // Propriétés xmlhttpreq
 xhr.onreadystatechange = function() {
   if(this.readyState == 4 && this.status == 200){
@@ -16,13 +16,12 @@ xhr.onreadystatechange = function() {
     afficher(datalist);
   }
 }
-// irsal request ila serveur
 // envoyer request à serveur
 xhr.send();
 
 // Fonction afficher() qui prend en paramètres une liste et l'affiche dans la table HTML
 function afficher(datalist){
-  var table = "";
+  let table = "";
   for (let datalists of datalist) {
     table += `
             <tr>
@@ -72,8 +71,8 @@ function afficher(datalist){
 
 // Search
 document.getElementById('search').onkeyup = function(){
-  var search = document.getElementById("search").value;
-  var newDataList = datalist.filter(function(a){
+  let search = document.getElementById("search").value;
+  let newDataList = datalist.filter(function(a){
     return a.titre.toLowerCase().includes(search.toLowerCase());
   });
   afficher(newDataList);
@@ -81,7 +80,7 @@ document.getElementById('search').onkeyup = function(){
 
 //// sort par rapport les titre et réalisateur et durée et année
 document.getElementById('floatingSelect').onchange=function(){
-    var  select= document.getElementById('floatingSelect').value;
+    let  select= document.getElementById('floatingSelect').value;
       if (select=="1") {
       datalist.sort((a, b) => a.titre.localeCompare(b.titre));
       afficher(datalist)
@@ -99,3 +98,52 @@ document.getElementById('floatingSelect').onchange=function(){
       afficher(datalist)
     }
 }
+
+// Sort Titre
+const titleHeader = document.querySelector("#title");
+let filmTitle = false;
+titleHeader.addEventListener("click", (e) => {
+  if (!filmTitle) {
+    datalist.sort((a, b) => a.titre.localeCompare(b.titre));
+    filmTitle = true;
+  } else {
+    datalist.reverse();
+  }
+  afficher(datalist)
+});
+// Sort réalisateur
+const réalisateurHeader = document.querySelector("#réalisateur");
+let filmRéalisateur = false;
+réalisateurHeader.addEventListener("click", (e) => {
+  if (!filmRéalisateur) {
+    datalist.sort((a, b) => a.réalisateur.localeCompare(b.réalisateur));
+    filmRéalisateur = true;
+  } else {
+    datalist.reverse();
+  }
+  afficher(datalist)
+});
+// Sort durée
+const duréeHeader = document.querySelector("#durée");
+let filmDurée = false;
+duréeHeader.addEventListener("click", (e) => {
+  if (!filmDurée) {
+    datalist.sort((a, b) => a.durée.localeCompare(b.durée));
+    filmDurée = true;
+  } else {
+    datalist.reverse();
+  }
+  afficher(datalist)
+});
+// Sort année
+const annéeHeader = document.querySelector("#année");
+let filmAnnée = false;
+annéeHeader.addEventListener("click", (e) => {
+  if (!filmAnnée) {
+    datalist.sort((a, b) => a.année.localeCompare(b.année));
+    filmAnnée = true;
+  } else {
+    datalist.reverse();
+  }
+  afficher(datalist)
+});
