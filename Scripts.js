@@ -2,14 +2,22 @@
 var datalist = [];
 
 // Récupérer les données
+// inxae xmlhttpre min ajl tabadol bayanat ma3a serveur
+// Créer une variable XMLHttpRequest pour échanger des données avec serveur
 var xhr = new XMLHttpRequest();
+// tohadid lana tari9at isti3lam naw3 get aw post (method, url)
+// Déterminer la méthode d'envoi get ou post (method, url)
 xhr.open("GET", "films.json");
+// khawas xmlhttpreq (on -> redysta -> 0 1 2 3 4 najih )
+// Propriétés xmlhttpreq
 xhr.onreadystatechange = function() {
-  if(xhr.readyState == 4 && xhr.status == 200){
-    datalist = JSON.parse(xhr.responseText);
+  if(this.readyState == 4 && this.status == 200){
+    datalist = JSON.parse(this.responseText);
     afficher(datalist);
   }
 }
+// irsal request ila serveur
+// envoyer request à serveur
 xhr.send();
 
 // Fonction afficher() qui prend en paramètres une liste et l'affiche dans la table HTML
@@ -62,7 +70,6 @@ function afficher(datalist){
   document.querySelector("tbody").innerHTML = table;
 }
 
-
 // Search
 document.getElementById('search').onkeyup = function(){
   var search = document.getElementById("search").value;
@@ -72,10 +79,7 @@ document.getElementById('search').onkeyup = function(){
   afficher(newDataList);
 };
 
-
-
-////////////////////////////////////
-// items.sort((a, b) => a.value - b.value); kat rabt ar9am
+//// sort par rapport les titre et réalisateur et durée et année
 document.getElementById('floatingSelect').onchange=function(){
     var  select= document.getElementById('floatingSelect').value;
       if (select=="1") {
@@ -87,17 +91,11 @@ document.getElementById('floatingSelect').onchange=function(){
       afficher(datalist)
     }
     else if (select=="3"){
-    //   datalist.sort((a,b)=> a.durée - b.durée)
       datalist.sort((a, b) => a.durée.localeCompare(b.durée));
       afficher(datalist)
     } 
     else if (select=="4"){
-    //   datalist.sort((a,b)=> a.production - b.production);
       datalist.sort((a, b) => a.année.localeCompare(b.année));
       afficher(datalist)
     }
 }
-
-///// fetch
-///// l'outil postmal
-    
